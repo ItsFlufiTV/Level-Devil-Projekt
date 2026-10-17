@@ -1,7 +1,8 @@
-int objectY = 680;
+int objectY = ;
 void lvl1(){
   object ground1 = new object(0, 680, 1300, 400);
   object ground2 = new object(1420, 680, 500, 400);
+  object fallingground = new object(1300, 680, 120, 400);
   background(234, 216, 107);
   fill(191, 163, 0);
   noStroke();
@@ -11,10 +12,10 @@ void lvl1(){
 }
 void drop(){
   if(player.x >= 1250){
-      objectY += 10;
-      rect(1300, objectY, 120, 400);
+      fallingground.y += 10;
+      rect(fallingground.x, fallingground.y, fallingground.width, fallingground.height);
   }
   else {
-    rect(1300, objectY, 120, 400);
+    rect(fallingground.x, fallingground.y, fallingground.width, fallingground.height);
   }
 }
