@@ -8,7 +8,7 @@ void lvl1(){
   drop();
 }
 void drop(){
-  if(playerX >= 1250){ 
+  if(player.x >= 1250){
       objectY += 10;
       rect(1300, objectY, 120, 400);
   }
