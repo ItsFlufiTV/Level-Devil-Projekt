@@ -4,12 +4,16 @@ public class player {
   float x, y;
   int width, height;
   Rectangle hitbox;
+  private int lvlData;
   public player(float x, float y, int width, int height){
     this.x = x;
     this.y = y;
     this.width = width;
     this.height = height;
     initHitbox();
+  }
+  public void loadLvlData(int lvlData){
+    this.lvlData = lvlData;
   }
   private void initHitbox(){
      hitbox = new Rectangle((int) x,(int) y, width, height);
