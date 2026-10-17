@@ -4,4 +4,5 @@ void setup(){
 void draw(){
   movement();
   lvl1();
+  rect(playerX, 670, 10, 10);
 }
