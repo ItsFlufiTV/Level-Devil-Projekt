@@ -8,13 +8,11 @@ void lvl1(){
   drop();
 }
 void drop(){
-  if(playerX == 1250){
-   for (objectY >= 1060){ 
+  if(playerX >= 1250){ 
       objectY += 10;
       rect(1300, objectY, 120, 400);
-       }
-    else {
-      rect(1300, objectY, 120, 400);
-        }
+  }
+  else {
+    rect(1300, objectY, 120, 400);
   }
 }
