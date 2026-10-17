@@ -5,5 +5,5 @@ void setup(){
 void draw(){
   movement();
   lvl1();
-  rect(player.x, player.y, player.hight, player.with);
+  rect(player.x, player.y, player.height, player.width);
 }
