@@ -7,7 +7,7 @@ void movement(){
       player.x -= 10;
     }
     if (keyCode == UP){
-
+      player.y -= 10;
     }
   }
 }

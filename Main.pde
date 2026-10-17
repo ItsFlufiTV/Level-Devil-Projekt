@@ -4,6 +4,6 @@ void setup(){
 void draw(){
   movement();
   lvl1();
-  rect(player.x, 670, 10, 10);
+  rect(player.x, player.y, 10, 10);
   println(player.x);
 }
