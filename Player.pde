@@ -1,22 +1,24 @@
+import java.awt.Graphics;
 import java.awt.Rectangle;
 public class player {
   boolean isFalling = false;
   float x, y;
-  int width, hight;
+  int with, hight;
   Rectangle hitbox;
 
-  public player(float x, float y, int width, int hight){
+  public player(float x, float y, int with, int hight){
     this.x = x;
     this.y = y;
-    this.width = width;
+    this.with = with;
     this.hight = hight;
   }
-
-  private void initHitbox(){
-      hitbox = new Rectangle((int) x,(int) y, width, hight);
+  private Rectangle initHitbox(){
+     hitbox = new Rectangle((int) x,(int) y, with, hight);
+     return hitbox;
   }
-  public void updateHitbox() {
+   public void updateHitbox() {
     hitbox.x = (int) x;
     hitbox.y = (int) y;
   }
+
 }

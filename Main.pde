@@ -6,4 +6,5 @@ void draw(){
   movement();
   lvl1();
   rect(player.x, player.y, 10, 10);
+  player.updateHitbox();
 }
