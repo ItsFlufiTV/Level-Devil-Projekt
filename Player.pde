@@ -12,9 +12,8 @@ public class player {
     this.with = with;
     this.hight = hight;
   }
-  private Rectangle initHitbox(){
+  private void initHitbox(){
      hitbox = new Rectangle((int) x,(int) y, with, hight);
-     return hitbox;
   }
    public void updateHitbox() {
     hitbox.x = (int) x;
