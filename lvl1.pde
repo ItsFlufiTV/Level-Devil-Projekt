@@ -1,7 +1,7 @@
 int objectY = 680;
 void lvl1(){
-  object gound1 = new object(0, 680, 1300, 400);
-  object gound2 = new object(1420, 680, 500, 400);
+  object ground1 = new object(0, 680, 1300, 400);
+  object ground2 = new object(1420, 680, 500, 400);
   background(234, 216, 107);
   fill(191, 163, 0);
   noStroke();
