@@ -7,4 +7,7 @@ void draw(){
   lvl1();
   rect(player.x, player.y, player.width, player.height);
   player.updateHitbox();
+  if(frameRate == 0){
+  exit();
+  }
 }
