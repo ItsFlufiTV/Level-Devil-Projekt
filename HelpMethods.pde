@@ -1,7 +1,5 @@
-public class helpMethods{
-  public void reset(){
-    lvl1Build();
-    player.x = 100;
-    player.y = 630;
-  }
+void reset(){
+  lvl1Build();
+  player.x = 100;
+  player.y = 630;
 }

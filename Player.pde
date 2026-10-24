@@ -40,7 +40,7 @@ public class player {
         }
       }
       if (y > height && keyPressed == true){
-        helpMethods.reset();
+        reset();
       }
     }
     if (x < door.x + door.w && x + w > door.x && y < door.y + door.h && y + h > door.y) {
@@ -49,8 +49,7 @@ public class player {
       } else if (bewegungX < 0) {
         x = door.x + door.w;
       }
-      textAlign(CENTER,CENTER);
-      text("Level 1 Complete", width / 2, height / 2);
+      levelComplete = true;
     }
   }
   public void jump(){

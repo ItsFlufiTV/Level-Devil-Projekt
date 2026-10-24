@@ -1,5 +1,5 @@
 player player = new player(100, 630, 20, 50);
-helpMethods helpMethods = new helpMethods();
+boolean levelComplete = false;
 void setup(){
   size(1920, 1060);
   lvl1Build();
@@ -9,4 +9,11 @@ void draw(){
   lvl1();
   player.update(grounds, door);
   player.display();
+  if(levelComplete){
+  background(0);
+  fill(255);
+  textSize(100);
+  textAlign(CENTER,CENTER);
+  text("Level 1 Complete", width / 2, height / 2);
+  }
 }
