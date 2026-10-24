@@ -12,22 +12,22 @@ public class player {
     this.w = w;
     this.h = h;
   }
-  public void update(sprite[] allGrounds){
+  public void update(sprite[] allGrounds, sprite door){
     bewegungY += gravity;
 
     x += bewegungX;
 
     onGround = false;
     for (sprite g : allGrounds) {
-          if (x < g.x + g.w && x + w > g.x && y < g.y + g.h && y + h > g.y) {
-            if (bewegungX > 0) {
-              x = g.x - w;
-            } else if (bewegungX < 0) {
-              x = g.x + g.w;
-            }
-            bewegungX = 0;
-          }
+      if (x < g.x + g.w && x + w > g.x && y < g.y + g.h && y + h > g.y) {
+        if (bewegungX > 0) {
+          x = g.x - w;
+        } else if (bewegungX < 0) {
+          x = g.x + g.w;
         }
+        bewegungX = 0;
+      }
+    }
 
     y += bewegungY;
 
@@ -42,6 +42,15 @@ public class player {
       if (y > height && keyPressed == true){
         helpMethods.reset();
       }
+    }
+    if (x < door.x + door.w && x + w > door.x && y < door.y + door.h && y + h > door.y) {
+      if (bewegungX > 0) {
+        x = door.x - w;
+      } else if (bewegungX < 0) {
+        x = door.x + door.w;
+      }
+      textAlign(CENTER,CENTER);
+      text("Level 1 Complete", width / 2, height / 2);
     }
   }
   public void jump(){

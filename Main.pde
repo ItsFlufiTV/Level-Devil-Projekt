@@ -7,6 +7,6 @@ void setup(){
 void draw(){
   movement();
   lvl1();
-  player.update(grounds);
+  player.update(grounds, door);
   player.display();
 }
