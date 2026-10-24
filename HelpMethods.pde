@@ -1,5 +1,7 @@
 public class helpMethods{
-  public boolean CanMoveHere(float x, float y, int width, int height, int lvlData){
-    return true;
+  public void reset(){
+    lvl1Build();
+    player.x = 100;
+    player.y = 630;
   }
 }

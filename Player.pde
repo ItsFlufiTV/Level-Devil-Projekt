@@ -1,32 +1,56 @@
-import java.awt.Rectangle;
 public class player {
-  boolean isFalling = false;
+  boolean onGround = false;
   float x, y;
-  int width, height;
-  Rectangle hitbox;
-  private int lvlData;
-  public player(float x, float y, int width, int height){
+  int w, h; // w = width h = height
+  float bewegungX = 0;
+  float bewegungY = 0;
+  float gravity = 0.5;
+  float zielGeschwindigkeitX = 0;
+  public player(float x, float y, int w, int h){
     this.x = x;
     this.y = y;
-    this.width = width;
-    this.height = height;
-    initHitbox();
+    this.w = w;
+    this.h = h;
   }
-  public void loadLvlData(int lvlData){
-    this.lvlData = lvlData;
+  public void update(sprite[] allGrounds){
+    bewegungY += gravity;
+
+    x += bewegungX;
+
+    onGround = false;
+    for (sprite g : allGrounds) {
+          if (x < g.x + g.w && x + w > g.x && y < g.y + g.h && y + h > g.y) {
+            if (bewegungX > 0) {
+              x = g.x - w;
+            } else if (bewegungX < 0) {
+              x = g.x + g.w;
+            }
+            bewegungX = 0;
+          }
+        }
+
+    y += bewegungY;
+
+    for(sprite g : allGrounds){ //collision check
+      if(x < g.x + g.w && x + w > g.x && y < g.y + g.h && y + h > g.y){ //erst player player von rechts an das linke ende dann anders rum und das auch noch mit y
+        if(bewegungY > 0 && (y + h - bewegungY) <= g.y + g.bewegungY + 2){// von oben fallend
+          y = g.y - h;
+          bewegungY = 0;
+          onGround = true;
+        }
+      }
+      if (y > height && keyPressed == true){
+        helpMethods.reset();
+      }
+    }
   }
-  private void initHitbox(){
-     hitbox = new Rectangle((int) x,(int) y, width, height);
+  public void jump(){
+    if(onGround == true){
+      bewegungY -= 12;
+    }
   }
-   public void updateHitbox() {
-    hitbox.x = (int) x;
-    hitbox.y = (int) y;
-  }
-  public Rectangle getHitbox() {
-    return hitbox;
-  }
-  public void drawHitbox() {
-    fill(255, 0, 0);
-    rect(hitbox.x, hitbox.y, hitbox.width, hitbox.height);
+  public void display(){
+    fill(0, 0, 0);
+    rect(x, y, w, h);
   }
 }
