@@ -15,6 +15,6 @@ void draw(){
     fill(255);
     textSize(100);
     textAlign(CENTER,CENTER);
-    text("Level" + currentLevel + "Complete", width / 2, height / 2);
+    text("Level " + currentLevel + " Complete", width / 2, height / 2);
   }
 }

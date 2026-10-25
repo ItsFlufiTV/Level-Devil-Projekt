@@ -40,7 +40,7 @@ public class player {
         }
       }
       if (y > height){
-      fill(255);
+      fill(100);
       textSize(70);
       textAlign(CENTER,CENTER);
       text("Press any Key to restart", width / 2, height / 2);
