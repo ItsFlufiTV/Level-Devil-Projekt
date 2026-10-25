@@ -1,3 +1,4 @@
+int currentLevel = 1;
 player player = new player(100, 630, 20, 50);
 boolean levelComplete = false;
 void setup(){
@@ -10,10 +11,10 @@ void draw(){
   player.update(grounds, door);
   player.display();
   if(levelComplete){
-  background(0);
-  fill(255);
-  textSize(100);
-  textAlign(CENTER,CENTER);
-  text("Level 1 Complete", width / 2, height / 2);
+    background(0);
+    fill(255);
+    textSize(100);
+    textAlign(CENTER,CENTER);
+    text("Level" + currentLevel + "Complete", width / 2, height / 2);
   }
 }

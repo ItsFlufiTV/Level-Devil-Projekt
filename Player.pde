@@ -39,7 +39,12 @@ public class player {
           onGround = true;
         }
       }
-      if (y > height && keyPressed == true){
+      if (y > height){
+      fill(255);
+      textSize(70);
+      textAlign(CENTER,CENTER);
+      text("Press any Key to restart", width / 2, height / 2);
+      if(keyPressed){
         reset();
       }
     }
@@ -52,6 +57,7 @@ public class player {
       levelComplete = true;
     }
   }
+}
   public void jump(){
     if(onGround == true){
       bewegungY -= 12;
