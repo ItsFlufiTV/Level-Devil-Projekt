@@ -1,3 +1,6 @@
+PImage animationPlayer1;
+PImage animationPlayer2;
+PImage animationPlayer3;
 public class player {
   boolean onGround = false;
   float x, y;
@@ -64,7 +67,14 @@ public class player {
     }
   }
   public void display(){
-    fill(0, 0, 0);
-    rect(x, y, w, h);
+    if(moveRight){
+      image(animationPlayer2, x, y);
+    }
+    else if(moveLeft){
+      image(animationPlayer3, x, y);
+    }
+    else{
+      image(animationPlayer1, x, y);
+    }
   }
 }
