@@ -1,4 +1,5 @@
 void reset(){
+  player.allife = true;
   currentLevelBuild();
   player.x = 100;
   player.y = 200;

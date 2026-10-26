@@ -1,6 +1,7 @@
 sprite[] allSprites1 = new sprite[3];
 sprite door = new sprite(1700, 580, 100, 100);
 void lvl1Build(){
+  nextLevel = 2;
   animationPlayer1 = loadImage("animation0.png");
   animationPlayer2 = loadImage("animation1.png");
   animationPlayer3 = loadImage("animation2.png");

@@ -3,6 +3,7 @@ PImage animationPlayer2;
 PImage animationPlayer3;
 public class player {
   boolean onGround = false;
+  boolean allife = true;
   float x, y;
   int w, h; // w = width h = height
   float bewegungX = 0;
@@ -16,6 +17,9 @@ public class player {
     this.h = h;
   }
   public void update(sprite[] allGrounds, sprite door){
+    if(allife){
+      display();
+    }
     bewegungY += gravity;
 
     x += bewegungX;
@@ -29,6 +33,9 @@ public class player {
           x = g.x + g.w;
         }
         bewegungX = 0;
+      }
+      if (g.r > 0 && y > g.y + g.r/2){
+        //allife = false;
       }
     }
 
