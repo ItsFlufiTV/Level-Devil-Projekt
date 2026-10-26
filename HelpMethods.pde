@@ -11,11 +11,13 @@ void currentLevelBuild(){
     lvl2Build();
   }
 }
-void currentLevel(){
+void checkLevelLoop(){
   if(currentLevel == 1){
     lvl1();
+    player.update(allSprites1,door);
   }
   if(currentLevel == 2){
     lvl2();
+    player.update(allSprites2,door);
   }
 }

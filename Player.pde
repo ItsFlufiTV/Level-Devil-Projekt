@@ -1,6 +1,6 @@
-PImage animationPlayer1 = loadImage("animation0 .png");
-PImage animationPlayer2 = loadImage("animation1.png");
-PImage animationPlayer3 = loadImage("animation2.png");
+PImage animationPlayer1;
+PImage animationPlayer2;
+PImage animationPlayer3;
 public class player {
   boolean onGround = false;
   float x, y;
@@ -22,7 +22,7 @@ public class player {
 
     onGround = false;
     for (sprite g : allGrounds) {
-      if (x < g.x + g.w && x + w > g.x && y < g.y + g.h && y + h > g.y) {
+      if (g.w > 0 && x < g.x + g.w && x + w > g.x && y < g.y + g.h && y + h > g.y) {
         if (bewegungX > 0) {
           x = g.x - w;
         } else if (bewegungX < 0) {
@@ -35,7 +35,7 @@ public class player {
     y += bewegungY;
 
     for(sprite g : allGrounds){ //collision check
-      if(x < g.x + g.w && x + w > g.x && y < g.y + g.h && y + h > g.y){ //erst player player von rechts an das linke ende dann anders rum und das auch noch mit y
+      if(g.w > 0 && x < g.x + g.w && x + w > g.x && y < g.y + g.h && y + h > g.y){ //erst player player von rechts an das linke ende dann anders rum und das auch noch mit y
         if(bewegungY > 0 && (y + h - bewegungY) <= g.y + g.bewegungY + 2){// von oben fallend
           y = g.y - h;
           bewegungY = 0;

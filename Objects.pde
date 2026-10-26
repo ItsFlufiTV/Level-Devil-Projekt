@@ -21,15 +21,15 @@ public class sprite{
     }
   }
   void display(){
-    if(w > 1){
+    //if(w > 1){
       noStroke();
       fill(191, 163, 0);
       rect(x, y, w, h);
-    }
-    else if(r > 1){
-      stroke(0);
-      fill(80);
-      circle(x, y, r);
-    }
+    //}
+    //else if(r > 1){
+      //stroke(0);
+      //fill(80);
+      //circle(x, y, r);
+    //}
   }
 }
