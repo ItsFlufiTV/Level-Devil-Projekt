@@ -7,7 +7,7 @@ void setup(){
 }
 void draw(){
   movement();
-  lvl1();
+  currentLevel();
   player.update(grounds, door);
   player.display();
   if(levelComplete){

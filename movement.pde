@@ -31,6 +31,6 @@ void keyReleased(){
     moveRight = false;
   }
   if(keyCode == LEFT){
-  moveLeft = false;
+    moveLeft = false;
   }
 }
