@@ -8,7 +8,7 @@ void currentLevelBuild(){
     lvl1Build();
   }
   if(currentLevel == 2){
-
+    lvl2Build();
   }
 }
 void currentLevel(){
@@ -16,6 +16,6 @@ void currentLevel(){
     lvl1();
   }
   if(currentLevel == 2){
-
+    lvl2();
   }
 }

@@ -9,6 +9,7 @@ void draw(){
   movement(); //movement funktion wird aufgerufen
   currentLevel(); //das currentlevel wird aufgerufen
   player.update(allSprites1, door);// der player wird geupdated
+  player.update(allSprites2, door);
   player.display();
   if(levelComplete){
     background(0);

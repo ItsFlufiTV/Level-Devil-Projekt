@@ -1,6 +1,6 @@
-PImage animationPlayer1;
-PImage animationPlayer2;
-PImage animationPlayer3;
+PImage animationPlayer1 = loadImage("animation0 .png");
+PImage animationPlayer2 = loadImage("animation1.png");
+PImage animationPlayer3 = loadImage("animation2.png");
 public class player {
   boolean onGround = false;
   float x, y;
