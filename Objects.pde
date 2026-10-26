@@ -1,9 +1,8 @@
 public class sprite{
   float x, y;
   float bewegungY = 0;
-  int w, h, r; // w = width h = height
-  boolean isFalling = false;
-  boolean ballIsFalling = false;
+  int w, h, r, waitTime; // w = width h = height
+  boolean isFalling, ballIsFalling, isRising, isWaiting, hasRisen = false;
   public sprite(float x, float y, int w, int h){
     this.x = x;
     this.y = y;
@@ -23,6 +22,23 @@ public class sprite{
     if(ballIsFalling){
     bewegungY += 0.5;
     y += bewegungY;
+    }
+    if(isRising){
+      if(!isWaiting){
+        y -= 5;
+        if(y <= 380){
+          isWaiting = true;
+          waitTime = millis();
+        }
+      }
+      else {
+        if(millis() - waitTime >= 1000){
+          isRising = false;
+          isWaiting = false;
+          hasRisen = false;
+          isFalling = true;
+        }
+      }
     }
   }
   void display(){
