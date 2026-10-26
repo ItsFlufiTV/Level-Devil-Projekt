@@ -1,7 +1,15 @@
 void reset(){
-  lvl1Build();
+  currentLevelBuild();
   player.x = 100;
-  player.y = 630;
+  player.y = 200;
+}
+void currentLevelBuild(){
+  if (currentLevel == 1){
+    lvl1Build();
+  }
+  if(currentLevel == 2){
+
+  }
 }
 void currentLevel(){
   if(currentLevel == 1){

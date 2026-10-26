@@ -1,14 +1,14 @@
-int currentLevel = 1;
-player player = new player(100, 630, 20, 50);
+int currentLevel = 1; //currentLevel ist gleich erstes Level
+player player = new player(100, 200, 20, 50); //neue Player aus classe an Player übergeben
 boolean levelComplete = false;
 void setup(){
   size(1920, 1060);
-  lvl1Build();
+  currentLevelBuild(); //das jetztige level wird erstellt
 }
 void draw(){
-  movement();
-  currentLevel();
-  player.update(grounds, door);
+  movement(); //movement funktion wird aufgerufen
+  currentLevel(); //das currentlevel wird aufgerufen
+  player.update(allSprites1, door);// der player wird geupdated
   player.display();
   if(levelComplete){
     background(0);
