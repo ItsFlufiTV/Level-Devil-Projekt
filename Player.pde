@@ -20,6 +20,15 @@ public class player {
     if(allife){
       display();
     }
+    else{
+    fill(100);
+    textSize(70);
+    textAlign(CENTER,CENTER);
+    text("Press any Key to restart", width / 2, height / 2);
+    if(keyPressed){
+      reset();
+    }
+    }
     bewegungY += gravity;
 
     x += bewegungX;
@@ -34,8 +43,8 @@ public class player {
         }
         bewegungX = 0;
       }
-      if (g.r > 0 && y > g.y + g.r/2){
-        //allife = false;
+      if (g.r > 0 && x < g.x + g.r/2 && x + w > g.x - g.r/2  && y + h > g.y - g.r/2 && y < g.y + g.r/2){
+        allife = false;
       }
     }
 
@@ -50,13 +59,7 @@ public class player {
         }
       }
       if (y > height){
-      fill(100);
-      textSize(70);
-      textAlign(CENTER,CENTER);
-      text("Press any Key to restart", width / 2, height / 2);
-      if(keyPressed){
-        reset();
-      }
+        allife = false;
     }
     if (x < door.x + door.w && x + w > door.x && y < door.y + door.h && y + h > door.y) {
       if (bewegungX > 0) {
