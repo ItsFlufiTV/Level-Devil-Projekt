@@ -56,8 +56,10 @@ public class player {
           bewegungY = 0;
           onGround = true;
         }
+        if(bewegungY < 0 && (y + bewegungY) >= g.y + g.h + g.bewegungY + 2)
+          y = g.y + g.h;
       }
-      if (y > height | y < 0 | x < 0 | x > width){ //auserhalb des bildschirms stirbt der spieler
+      if (y > height | y + h < 0 | x + w < 0 | x > width){ //auserhalb des bildschirms stirbt der spieler
         allife = false;
     }
     if (x < door.x + door.w && x + w > door.x && y < door.y + door.h && y + h > door.y) {//collision mit tür und wenn dann levelComplete true für win
