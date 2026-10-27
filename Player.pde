@@ -1,49 +1,48 @@
-PImage animationPlayer1;
+PImage animationPlayer1;//alle animationen variablen erstellt
 PImage animationPlayer2;
 PImage animationPlayer3;
 public class player {
-  boolean onGround = false;
-  boolean allife = true;
-  float x, y;
+  boolean onGround = false;//ist normaler weise noch nihy auf boden standartmäsig auf false
+  boolean allife = true;//lebt automatisch
+  float x, y;//position des spielers
   int w, h; // w = width h = height
-  float bewegungX = 0;
-  float bewegungY = 0;
-  float gravity = 0.5;
-  float zielGeschwindigkeitX = 0;
-  public player(float x, float y, int w, int h){
-    this.x = x;
+  float bewegungX, bewegungY = 0;//die bewegung in x oder y ist standartmäsig auf 0
+  float zielGeschwindigkeitX = 0;//zielgeschwindigkeit in x richtung standartmäsig auch auf 0
+  float gravity = 0.5;// gravitationskraft auf 0.5 dauerhaft
+  public player(float x, float y, int w, int h){//player intializiert
+    this.x = x;//alle variablen werden übergeben
     this.y = y;
     this.w = w;
     this.h = h;
   }
-  public void update(sprite[] allGrounds, sprite door){
-    if(allife){
+  public void update(sprite[] allGrounds, sprite door){//der spieler wird geupdatet
+    if(allife){//check ob er lebt um ihn zu displayen
       display();
     }
-    else{
+    else{//wenn nicht lebt wird der todestext gezeigt
     fill(100);
     textSize(70);
     textAlign(CENTER,CENTER);
     text("Press any Key to restart", width / 2, height / 2);
-    if(keyPressed){
+    if(keyPressed){//wenn taste gedrückt wird wird das level zurückgesetzt
       reset();
     }
     }
-    bewegungY += gravity;
+    bewegungY += gravity;//gravitation wird addiert um den spieler standartmásig nach unten zu bewegen
 
-    x += bewegungX;
+    x += bewegungX;//die x position wird mit bewegungX addiert um den spieler falls bewegt nach rechts oder links zu verschieben
 
-    onGround = false;
-    for (sprite g : allGrounds) {
-      if (g.w > 0 && x < g.x + g.w && x + w > g.x && y < g.y + g.h && y + h > g.y) {
-        if (bewegungX > 0) {
+    onGround = false;//bei jedem update standartmäsig auf false um den spieler nur auf boden die gravitation nicht zu benutzen
+    for (sprite g : allGrounds) {//für jedes object wird es ausgeführt
+      if (g.w > 0 && x < g.x + g.w && x + w > g.x && y < g.y + g.h && y + h > g.y) {//x und y collision mit den (hitboxen)
+        if (bewegungX > 0) {//falls er sich nach links oder rechts beweg darf er das nicht und die bewegung wird annuliert
           x = g.x - w;
         } else if (bewegungX < 0) {
           x = g.x + g.w;
         }
         bewegungX = 0;
       }
-      if (g.r > 0 && x < g.x + g.r/2 && x + w > g.x - g.r/2  && y + h > g.y - g.r/2 && y < g.y + g.r/2){
+      if (g.r > 0 && x < g.x + g.r/2 && x + w > g.x - g.r/2  && y + h > g.y - g.r/2 && y < g.y + g.r/2){//collision mit kugeln die den spieler töten
         allife = false;
       }
     }
@@ -52,13 +51,13 @@ public class player {
 
     for(sprite g : allGrounds){ //collision check
       if(g.w > 0 && x < g.x + g.w && x + w > g.x && y < g.y + g.h && y + h > g.y){ //erst player player von rechts an das linke ende dann anders rum und das auch noch mit y
-        if(bewegungY > 0 && (y + h - bewegungY) <= g.y + g.bewegungY + 2){// von oben fallend
+        if(bewegungY > 0 && (y + h - bewegungY) <= g.y + g.bewegungY + 2){// von oben fallend bewegung wird annuliert nach oben oder unten
           y = g.y - h;
           bewegungY = 0;
           onGround = true;
         }
       }
-      if (y > height){
+      if (y > height | y < 0 | x < 0 | x > width){ //auserhalb des bildschirms stirbt der spieler
         allife = false;
     }
     if (x < door.x + door.w && x + w > door.x && y < door.y + door.h && y + h > door.y) {

@@ -1,9 +1,9 @@
 int currentLevel = 1; //currentLevel ist gleich erstes Level
 int nextLevel;
 player player = new player(100, 200, 20, 50); //neue Player aus classe an Player übergeben
-boolean levelComplete = false;
+boolean levelComplete = false;//level ist noch nicht beendet
 void setup(){
-  size(1920, 1060);
+  size(1920, 1060);//fenster wird erstellt
   currentLevelBuild(); //das jetztige level wird erstellt
 }
 void draw(){
