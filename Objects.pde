@@ -1,3 +1,4 @@
+PImage spikes;
 public class sprite{//sprite classe erstellt
   float x, y;//alle nötigen variablen werden erstellt
   float bewegungY = 0;

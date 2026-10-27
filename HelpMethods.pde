@@ -11,6 +11,8 @@ void currentLevelBuild(){//das jetztige level wird mit der jewaligen build funkt
   if(currentLevel == 2){
     lvl2Build();
   }
+  if(currentLevel == 3){
+  }
 }
 void checkLevelLoop(){//das levle wird abgerufen und der player mi den sprites geupdatet
   if(currentLevel == 1){
