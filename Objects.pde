@@ -69,7 +69,7 @@ public class sprite{//sprite classe erstellt
     }
     else if(r > 1){
       stroke(0);
-      fill(80);
+      fill(0, 255, 0);
       circle(x, y, r);
     }
     if(deadly){
