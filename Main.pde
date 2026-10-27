@@ -9,17 +9,17 @@ void setup(){
 void draw(){
   movement(); //movement funktion wird aufgerufen
   checkLevelLoop(); //das currentlevel wird aufgerufen
-  if(levelComplete){
-    background(0);
-    fill(255);
-    textSize(100);
-    textAlign(CENTER,CENTER);
-    text("Level " + currentLevel + " Complete\npress SPACE", width / 2, height / 2);
-    if(keyPressed && key == ' ' ){
-      delay(1000);
-      currentLevel = nextLevel;
-      levelComplete = false;
-      reset();
+  if(levelComplete){ //kontrolle ob das level abgeschlossen wurde
+    background(0);// hintegrund gesetzt
+    fill(255);//füllfarbe vom text
+    textSize(100); //textgröse gesetzt
+    textAlign(CENTER,CENTER);// ausrichtung des texts
+    text("Level " + currentLevel + " Complete\npress SPACE", width / 2, height / 2);//text displayed
+    if(keyPressed && key == ' ' ){//kontrolle space gerdrückt
+      delay(1000);//ladezeit
+      currentLevel = nextLevel;//das nächste level wird auf das jeztige gesetzt um ein neues level später abzurufen
+      levelComplete = false;//das nächste level ist noch nicht abgeschlossen
+      reset();//nächstes level wird gebaut bzw jetzt das jetztige
     }
   }
 }
