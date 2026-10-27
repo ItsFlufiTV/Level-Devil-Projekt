@@ -12,6 +12,7 @@ void lvl1Build(){// die level bau funktio
 void lvl1(){
   background(234, 216, 107);//hintergrund
   if(player.x >= 1250){//wenn der player an x ankommt fällt der boden
+    allSprites1[1].speed = 2;
     allSprites1[1].isFalling = true;
   }
   for (sprite g : allSprites1){//alles im array wird geupdatet und gezeigt

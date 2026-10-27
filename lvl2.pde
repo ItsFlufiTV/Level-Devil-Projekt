@@ -10,13 +10,18 @@ void lvl2Build(){// array wird mit boden und allen sprites befüllt und das next
 void lvl2(){
   background(234, 216, 107);// hintergrund
   if(player.x > 1000){//wenn player an x wird ball fallen gelassen
-    allSprites2[3].ballIsFalling = true;
+    allSprites2[3].isFalling = true;
+    allSprites2[3].speed = 0.5;
   }
   if(player.x >= 1250){// player am nächsten x boden fällt
     allSprites2[1].isFalling = true;
+    allSprites2[1].speed = 2;
   }
   if(player.x >= 1300 && !allSprites2[4].hasRisen){// player überm loch eine wand schiebt sich auf und fällt wieder um den spieler zu blockieren
     allSprites2[4].isRising = true;
+    allSprites2[4].speed = 10;
+    allSprites2[4].neededHeight = 440;
+    allSprites2[4].waitingTime = 1000;
   }
   for(sprite s : allSprites2){//alle sprites werden geudatet und gezeigt
     s.update();
