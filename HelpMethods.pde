@@ -1,10 +1,10 @@
-void reset(){
+void reset(){//reset funktion setzt den player zurück und daslevel wird neu erstellt
   player.allife = true;
   currentLevelBuild();
   player.x = 100;
   player.y = 200;
 }
-void currentLevelBuild(){
+void currentLevelBuild(){//das jetztige level wird mit der jewaligen build funktion gebaut
   if (currentLevel == 1){
     lvl1Build();
   }
@@ -12,7 +12,7 @@ void currentLevelBuild(){
     lvl2Build();
   }
 }
-void checkLevelLoop(){
+void checkLevelLoop(){//das levle wird abgerufen und der player mi den sprites geupdatet
   if(currentLevel == 1){
     lvl1();
     player.update(allSprites1,door);
