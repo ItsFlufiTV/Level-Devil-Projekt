@@ -60,7 +60,7 @@ public class player {
       if (y > height | y < 0 | x < 0 | x > width){ //auserhalb des bildschirms stirbt der spieler
         allife = false;
     }
-    if (x < door.x + door.w && x + w > door.x && y < door.y + door.h && y + h > door.y) {
+    if (x < door.x + door.w && x + w > door.x && y < door.y + door.h && y + h > door.y) {//collision mit tür und wenn dann levelComplete true für win
       if (bewegungX > 0) {
         x = door.x - w;
       } else if (bewegungX < 0) {
@@ -70,12 +70,12 @@ public class player {
     }
   }
 }
-  public void jump(){
+  public void jump(){//jump funktiion um den spieler wenn auf boden springen zu lassen
     if(onGround == true){
       bewegungY -= 12;
     }
   }
-  public void display(){
+  public void display(){//zeig den spieler mit zwei bildern nach links und nach rechts und wenn er steht als animation
     if(moveRight){
       image(animationPlayer2, x, y);
     }
