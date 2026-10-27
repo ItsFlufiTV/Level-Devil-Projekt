@@ -1,5 +1,5 @@
-sprite[] allSprites1 = new sprite[3];
-sprite door = new sprite(1700, 580, 100, 100);
+sprite[] allSprites1 = new sprite[3];//array wird erstellt
+sprite door = new sprite(1700, 580, 100, 100);//neuer sprite door
 void lvl1Build(){
   nextLevel = 2;
   animationPlayer1 = loadImage("animation0.png");
