@@ -22,6 +22,7 @@ void lvl2(){
     allSprites2[4].speed = 10;
     allSprites2[4].neededHeight = 440;
     allSprites2[4].waitingTime = 1000;
+    allSprites2[4].needsDrop = true;
   }
   for(sprite s : allSprites2){//alle sprites werden geudatet und gezeigt
     s.update();

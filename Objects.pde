@@ -3,7 +3,7 @@ public class sprite{//sprite classe erstellt
   float x, y, neededHeight, neededX, speed;//alle nötigen variablen werden erstellt
   float bewegungY, bewegungX = 0;
   int w, h, r, waitTime, waitingTime; // w = width h = height
-  boolean isFalling, isRising, isMovingX, hasMovenX, isWaiting, hasRisen, deadly = false;
+  boolean isFalling, isRising, isMovingX, hasMovenX, isWaiting, hasRisen, needsDrop, deadly = false;
   public sprite(float x, float y, int w, int h){//initialiesierungsweg
     this.x = x;//alle nötigen variablen werden auf die intigrieten parameter gesetzt
     this.y = y;
@@ -55,7 +55,8 @@ public class sprite{//sprite classe erstellt
         if(millis() - waitTime >= waitingTime){//wartet bis es fällt und das es oben war auf true gesetzt
           isRising = false;
           isWaiting = false;
-          hasRisen = false;
+          hasRisen = true;
+          if(needsDrop)
           isFalling = true;
         }
       }
