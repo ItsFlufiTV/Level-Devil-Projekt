@@ -56,8 +56,9 @@ public class sprite{//sprite classe erstellt
           isRising = false;
           isWaiting = false;
           hasRisen = true;
-          if(needsDrop)
-          isFalling = true;
+          if(needsDrop){//nur wenn es gebraucht wird fällt das objekt
+            isFalling = true;
+          }
         }
       }
     }
