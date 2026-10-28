@@ -42,7 +42,7 @@ public class player {
         }
         bewegungX = 0;
       }
-      if (g.r > 0 && x < g.x + g.r/2 && x + w > g.x - g.r/2  && y + h > g.y - g.r/2 && y < g.y + g.r/2){//collision mit kugeln die den spieler töten
+      if (g.r > 0 && dist(x, y, g.x, g.y) < g.r/2){//collision mit kugeln die den spieler töten
         allife = false;
       }
       if (g.deadly && x < g.x + g.w && x + w > g.x  && y + h > g.y && y < g.y + g.h){//collision tötet den spieler wenn deadly true ist

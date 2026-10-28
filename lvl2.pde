@@ -11,7 +11,7 @@ void lvl2(){
   background(234, 216, 107);// hintergrund
   if(player.x > 1000){//wenn player an x wird ball fallen gelassen
     allSprites2[3].isFalling = true;
-    allSprites2[3].speed = 0.5;
+    allSprites2[3].speed = 1;
   }
   if(player.x >= 1250){// player am nächsten x boden fällt
     allSprites2[1].isFalling = true;
