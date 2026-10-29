@@ -16,8 +16,7 @@ void draw(){
     textAlign(CENTER,CENTER);// ausrichtung des texts
     text("Level " + currentLevel + " Complete\npress SPACE", width / 2, height / 2);//text displayed
     if(keyPressed && key == ' ' ){//kontrolle space gerdrückt
-      delay(1000);//ladezeit
-      currentLevel = nextLevel;//das nächste level wird auf das jeztige gesetzt um ein neues level später abzurufen
+      currentLevel ++;//das nächste level wird auf das jeztige gesetzt um ein neues level später abzurufen
       levelComplete = false;//das nächste level ist noch nicht abgeschlossen
       reset();//nächstes level wird gebaut bzw jetzt das jetztige
     }
