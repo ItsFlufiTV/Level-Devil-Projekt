@@ -1,6 +1,5 @@
 sprite[] allSprites4 = new sprite[5];
 void lvl4Build(){
-  nextLevel = 5;
   allSprites4[0] = new sprite(0, 680, 600, 400);
   allSprites4[1] = new sprite(500, 680, 50, 400);
   allSprites4[2] = new sprite(600, 680, 120, 400);

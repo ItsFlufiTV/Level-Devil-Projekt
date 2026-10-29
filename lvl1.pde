@@ -1,7 +1,6 @@
 sprite[] allSprites1 = new sprite[3];//array wird erstellt
 sprite door = new sprite(1700, 580, 100, 100);//neuer sprite door
 void lvl1Build(){// die level bau funktio
-  nextLevel = 2;// das nächste level wird initializiert und auf 2 gesetzt
   animationPlayer1 = loadImage("animation0.png");//animation die bilder eingeleitet
   animationPlayer2 = loadImage("animation1.png");
   animationPlayer3 = loadImage("animation2.png");

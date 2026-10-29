@@ -1,6 +1,5 @@
 sprite[] allSprites3 = new sprite[4];//neues aaray für neues level
 void lvl3Build(){//build funktion um im current level die level strucktur aufzubauen
-  nextLevel = 4;//nächstes level wird level 4
   allSprites3[0] = new sprite(1000, 720, 60, 55, true);//allle spikes und der boden in das array hinzugefügt
   allSprites3[1] = new sprite(1060, 720, 60, 55, true);
   allSprites3[2] = new sprite(1600, 720, 60, 55, true);
