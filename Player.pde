@@ -35,9 +35,9 @@ public class player {
     onGround = false;//bei jedem update standartmäsig auf false um den spieler nur auf boden die gravitation nicht zu benutzen
     for (sprite g : allGrounds) {//für jedes object wird es ausgeführt
       if (!g.deadly && g.w > 0 && x < g.x + g.w && x + w > g.x && y < g.y + g.h && y + h > g.y) {//x und y collision mit den (hitboxen)
-        if (bewegungX > 0) {//falls er sich nach links oder rechts beweg darf er das nicht und die bewegung wird annuliert
+        if (bewegungX > 0 | g.bewegungX < 0) {//falls er sich nach links oder rechts beweg darf er das nicht und die bewegung wird annuliert
           x = g.x - w;
-        } else if (bewegungX < 0) {
+        } else if (bewegungX < 0 | g.bewegungX > 0) {
           x = g.x + g.w;
         }
         bewegungX = 0;
@@ -54,12 +54,12 @@ public class player {
 
     for(sprite g : allGrounds){ //collision check
       if(!g.deadly && g.w > 0 && x < g.x + g.w && x + w > g.x && y < g.y + g.h && y + h > g.y){ //erst player player von rechts an das linke ende dann anders rum und das auch noch mit y
-        if(bewegungY > 0 && (y + h - bewegungY) <= g.y + g.bewegungY + 2){// von oben fallend bewegung wird annuliert nach oben oder unten
+        if(bewegungY > 0 && (y + h - bewegungY) <= g.y + g.bewegungY + 2 | bewegungY < 0){// von oben fallend bewegung wird annuliert nach oben oder unten
           y = g.y - h;
           bewegungY = 0;
           onGround = true;
         }
-        if(bewegungY < 0 && (y + bewegungY) >= g.y + g.h + g.bewegungY + 2)
+        if(bewegungY < 0 && (y + bewegungY) >= g.y + g.h + g.bewegungY + 2 | bewegungY > 0)
           y = g.y + g.h;
       }
       if (y > height | y + h < 0 | x + w < 0 | x > width){ //auserhalb des bildschirms stirbt der spieler
