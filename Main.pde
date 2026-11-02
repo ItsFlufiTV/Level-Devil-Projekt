@@ -1,5 +1,5 @@
 int currentLevel = 1; //currentLevel ist gleich erstes Level
-player player = new player(100, 200, 20, 50); //neue Player aus classe an Player übergeben
+player player = new player(100, 200, 20, 50); //neue Player aus klasse an Player übergeben
 boolean levelComplete = false;//level ist noch nicht beendet
 void setup(){
   size(1920, 1060);//fenster wird erstellt

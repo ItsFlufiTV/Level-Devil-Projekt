@@ -1,12 +1,12 @@
-sprite[] allSprites4 = new sprite[5];
-void lvl4Build(){
+sprite[] allSprites4 = new sprite[5]; //array lvl 4
+void lvl4Build(){// level 4 wird gebaut der boden und die zu dem zeitpunkt versteckten wände
   allSprites4[0] = new sprite(0, 680, 600, 400);
   allSprites4[1] = new sprite(500, 680, 50, 400);
   allSprites4[2] = new sprite(600, 680, 120, 400);
   allSprites4[3] = new sprite(720, 680, 50, 400);
   allSprites4[4] = new sprite(720, 680, 1200, 400);
 }
-void lvl4(){
+void lvl4(){// hintergrund und updates wenn spieler eventpoints erreicht
 background(234, 216, 107);
   if(player.x >= 535 && !allSprites4[3].hasRisen){
     allSprites4[2].isFalling = true;
