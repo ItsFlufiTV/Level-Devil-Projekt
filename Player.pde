@@ -2,7 +2,7 @@ PImage animationPlayer1;//alle animationen variablen erstellt
 PImage animationPlayer2;
 PImage animationPlayer3;
 public class player {
-  boolean onGround = false;//ist normaler weise noch nihy auf boden standartmäsig auf false
+  boolean onGround = false;//ist normalerweise noch nicht auf boden standartmäßig auf false
   boolean allife = true;//lebt automatisch
   float x, y;//position des spielers
   int w, h; // w = width h = height
@@ -28,14 +28,14 @@ public class player {
       reset();
     }
     }
-    bewegungY += gravity;//gravitation wird addiert um den spieler standartmásig nach unten zu bewegen
+    bewegungY += gravity;//gravitation wird addiert um den spieler standartmäßig nach unten zu bewegen
 
     x += bewegungX;//die x position wird mit bewegungX addiert um den spieler falls bewegt nach rechts oder links zu verschieben
 
     onGround = false;//bei jedem update standartmäsig auf false um den spieler nur auf boden die gravitation nicht zu benutzen
     for (sprite g : allGrounds) {//für jedes object wird es ausgeführt
       if (!g.deadly && g.w > 0 && x < g.x + g.w && x + w > g.x && y < g.y + g.h && y + h > g.y) {//x und y collision mit den (hitboxen)
-        if (bewegungX > 0 | g.bewegungX < 0) {//falls er sich nach links oder rechts beweg darf er das nicht und die bewegung wird annuliert
+        if (bewegungX > 0 | g.bewegungX < 0) {//falls er sich nach links oder rechts bewegt darf er das nicht und die bewegung wird annuliert
           x = g.x - w;
         } else if (bewegungX < 0 | g.bewegungX > 0) {
           x = g.x + g.w;
@@ -75,7 +75,7 @@ public class player {
     }
   }
 }
-  public void jump(){//jump funktiion um den spieler wenn auf boden springen zu lassen
+  public void jump(){//jump funktion um den spieler wenn auf boden springen zu lassen
     if(onGround == true){
       bewegungY -= 12;
     }

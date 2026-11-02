@@ -1,11 +1,11 @@
 PImage spikes;
-public class sprite{//sprite classe erstellt
+public class sprite{//sprite klasse erstellt
   float x, y, neededHeight, neededX, speed;//alle nötigen variablen werden erstellt
   float bewegungY, bewegungX = 0;
   int w, h, r, waitTime, waitingTime; // w = width h = height
   boolean isFalling, isRising, isMovingX, hasMovenX, isWaiting, hasRisen, needsDrop, needsDropX, deadly = false;
-  public sprite(float x, float y, int w, int h){//initialiesierungsweg
-    this.x = x;//alle nötigen variablen werden auf die intigrieten parameter gesetzt
+  public sprite(float x, float y, int w, int h){//initialisierungsweg
+    this.x = x;//alle nötigen variablen werden auf die intigrierten parameter gesetzt
     this.y = y;
     this.w = w;
     this.h = h;

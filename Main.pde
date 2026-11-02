@@ -9,9 +9,9 @@ void draw(){
   movement(); //movement funktion wird aufgerufen
   checkLevelLoop(); //das currentlevel wird aufgerufen
   if(levelComplete){ //kontrolle ob das level abgeschlossen wurde
-    background(0);// hintegrund gesetzt
+    background(0);// hintergrund gesetzt
     fill(255);//füllfarbe vom text
-    textSize(100); //textgröse gesetzt
+    textSize(100); //textgröße gesetzt
     textAlign(CENTER,CENTER);// ausrichtung des texts
     text("Level " + currentLevel + " Complete\npress SPACE", width / 2, height / 2);//text displayed
     if(keyPressed && key == ' ' ){//kontrolle space gerdrückt
