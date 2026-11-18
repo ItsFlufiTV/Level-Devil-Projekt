@@ -3,7 +3,7 @@ void lvl3Build(){//build funktion um im current level die level struktur aufzuba
   allSprites3[0] = new sprite(1000, 720, 60, 55, true);//allle spikes und der boden in das array hinzugefügt
   allSprites3[1] = new sprite(1060, 720, 60, 55, true);
   allSprites3[2] = new sprite(1600, 720, 60, 55, true);
-  allSprites3[3] = new sprite(0, 680, 1920, 400);
+  allSprites3[3] = new sprite(0, 680, 1920, width);
   spikes = loadImage("Spikes.png");//spikes bild wird genommen um später die spikes zu zeigen
 }
 void lvl3(){//lvl3 funktion um in current level das level zu aktualisieren und die ereignisse zu triggern

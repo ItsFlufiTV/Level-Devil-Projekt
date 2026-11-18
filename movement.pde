@@ -1,4 +1,4 @@
-boolean moveRight, moveLeft = false;//moved noch nicht nach rechts oder links
+boolean moveRight, moveLeft, showFrames = false;//moved noch nicht nach rechts oder links
 void movement(){  //die boolean variablen ändern die zielGeschwindigkeit je nach dem ob links oder rechts
   player.zielGeschwindigkeitX = 0;
     if (moveRight){
@@ -24,6 +24,14 @@ void keyPressed(){//wenn taste gedrückt dann check welche wenn links oder recht
   if(keyCode == UP | key ==  'w'){
     player.jump();
   }
+  if(key == 'f'){
+    if(!showFrames){
+    showFrames = true;
+    }  
+    else{
+      showFrames = false;
+    }
+}
 }
 void keyReleased(){//wenn losgelassen wieder zurückgeändert auf false
   if (keyCode == RIGHT | key == 'd'){

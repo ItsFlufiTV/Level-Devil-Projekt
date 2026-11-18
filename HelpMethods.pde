@@ -35,4 +35,10 @@ void checkLevelLoop(){//das level wird abgerufen und der player mit den sprites 
     lvl4();
     player.update(allSprites4, door);
   }
+  if(showFrames){
+    textAlign(CENTER);
+    textSize(50);
+    fill(20, 20, 20, 50);
+    text(int(frameRate), 100, 100);
+  }
 }

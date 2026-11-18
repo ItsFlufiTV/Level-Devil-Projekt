@@ -31,7 +31,6 @@ public class player {
     bewegungY += gravity;//gravitation wird addiert um den spieler standartmäßig nach unten zu bewegen
 
     x += bewegungX;//die x position wird mit bewegungX addiert um den spieler falls bewegt nach rechts oder links zu verschieben
-
     onGround = false;//bei jedem update standartmäsig auf false um den spieler nur auf boden die gravitation nicht zu benutzen
     for (sprite g : allGrounds) {//für jedes object wird es ausgeführt
       if (!g.deadly && g.w > 0 && x < g.x + g.w && x + w > g.x && y < g.y + g.h && y + h > g.y) {//x und y collision mit den (hitboxen)

@@ -1,10 +1,10 @@
 sprite[] allSprites2 = new sprite[5]; //neues array für das neue level
 void lvl2Build(){// array wird mit boden und allen sprites befüllt und das naechste level erhöht
-  allSprites2[0] = new sprite(0, 680, 1300, 400);
-  allSprites2[1] = new sprite(1300, 680, 120, 400);
-  allSprites2[2] = new sprite(1420, 680, 500, 400);
+  allSprites2[0] = new sprite(0, 680, 1300, width);
+  allSprites2[1] = new sprite(1300, 680, 120, width);
+  allSprites2[2] = new sprite(1420, 680, 500, width);
   allSprites2[3] = new sprite(1100, -253, 350);
-  allSprites2[4] = new sprite(1420, 680, 50, 400);
+  allSprites2[4] = new sprite(1420, 680, 50, width);
 }
 void lvl2(){
   background(234, 216, 107);// Hintergrund
